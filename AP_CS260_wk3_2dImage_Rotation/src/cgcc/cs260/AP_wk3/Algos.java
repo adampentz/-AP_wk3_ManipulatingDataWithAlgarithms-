@@ -21,7 +21,8 @@ public class Algos {
     	twist180();
     }
     public void create3() {  
-    	flipTri270();
+    	//flipTri270();
+    	printArray270();
     }
     /**
      * print the 2d array to console
@@ -189,4 +190,26 @@ public class Algos {
 	        }
 	    }
     }
+    
+    //fix from class
+    private char[][] transpose(){
+		char[][] temp = new char[16][8];
+		
+		for(int r = 0; r < 16; r++) {
+			for(int c = 0; c < 8; c++) {
+				temp[r][c] = arr[c][r];
+			}
+		}
+		
+		return temp;
+	}
+	public void printArray270() {
+		char[][] temp = transpose();
+		for(int r = 15; r >= 0; r--) {
+			for(int c = 0; c < 8; c++) {
+				System.out.print(temp[r][c]);
+			}
+			System.out.println();
+		}
+	}
 }
